@@ -1,0 +1,220 @@
+==================================================
+IT HELP DESK TICKET ANALYSIS - EDA REPORT
+==================================================
+
+1. DATASET OVERVIEW
+Total tickets: 50000
+Total columns: 18
+
+Column names:
+['Ticket_ID', 'Created_Date', 'Department', 'Priority', 'Status', 'Assigned_To', 'Resolution_Time_hrs', 'Customer_Rating', 'Tags', 'Body', 'Created_Year', 'Created_Month', 'Month_Name', 'Day_of_Week', 'Issue_Category', 'Resolution_Category', 'SLA_Target_Hours', 'SLA_Status']
+
+2. DATASET INFORMATION
+<class 'pandas.DataFrame'>
+RangeIndex: 50000 entries, 0 to 49999
+Data columns (total 18 columns):
+ #   Column               Non-Null Count  Dtype  
+---  ------               --------------  -----  
+ 0   Ticket_ID            50000 non-null  str    
+ 1   Created_Date         50000 non-null  str    
+ 2   Department           50000 non-null  str    
+ 3   Priority             50000 non-null  str    
+ 4   Status               50000 non-null  str    
+ 5   Assigned_To          50000 non-null  str    
+ 6   Resolution_Time_hrs  50000 non-null  float64
+ 7   Customer_Rating      50000 non-null  float64
+ 8   Tags                 50000 non-null  str    
+ 9   Body                 50000 non-null  str    
+ 10  Created_Year         50000 non-null  int64  
+ 11  Created_Month        50000 non-null  int64  
+ 12  Month_Name           50000 non-null  str    
+ 13  Day_of_Week          50000 non-null  str    
+ 14  Issue_Category       50000 non-null  str    
+ 15  Resolution_Category  50000 non-null  str    
+ 16  SLA_Target_Hours     50000 non-null  int64  
+ 17  SLA_Status           50000 non-null  str    
+dtypes: float64(2), int64(3), str(13)
+memory usage: 6.9 MB
+None
+
+3. MISSING VALUES
+Ticket_ID              0
+Created_Date           0
+Department             0
+Priority               0
+Status                 0
+Assigned_To            0
+Resolution_Time_hrs    0
+Customer_Rating        0
+Tags                   0
+Body                   0
+Created_Year           0
+Created_Month          0
+Month_Name             0
+Day_of_Week            0
+Issue_Category         0
+Resolution_Category    0
+SLA_Target_Hours       0
+SLA_Status             0
+
+4. STATISTICAL SUMMARY
+        Ticket_ID Created_Date     Department Priority       Status Assigned_To  Resolution_Time_hrs  Customer_Rating               Tags                        Body  Created_Year  Created_Month Month_Name Day_of_Week          Issue_Category Resolution_Category  SLA_Target_Hours              SLA_Status
+count       50000        50000          50000    50000        50000       50000         50000.000000     50000.000000              50000                       50000  50000.000000   50000.000000      50000       50000                   50000               50000       50000.00000                   50000
+unique      50000          901              8        4            4          40                  NaN              NaN              33381                          10           NaN            NaN         12           7                       4                   3               NaN                       2
+top     TKT000001   2023-10-16  User Accounts     High  In Progress    Agent_12                  NaN              NaN  Security, Windows  License activation failed.           NaN            NaN      March      Monday  Network & Connectivity      Slow (>24 hrs)               NaN  Breached (assumed SLA)
+freq            1           92           6389    12702        12580        1355                  NaN              NaN                 35                        5084           NaN            NaN       5297        7369                   31373               33432               NaN                   35595
+mean          NaN          NaN            NaN      NaN          NaN         NaN            36.160259         3.005548                NaN                         NaN   2023.783160       5.925680        NaN         NaN                     NaN                 NaN          20.97184                     NaN
+std           NaN          NaN            NaN      NaN          NaN         NaN            20.693705         1.155044                NaN                         NaN      0.740318       3.422045        NaN         NaN                     NaN                 NaN          17.29630                     NaN
+min           NaN          NaN            NaN      NaN          NaN         NaN             0.500000         1.000000                NaN                         NaN   2023.000000       1.000000        NaN         NaN                     NaN                 NaN           4.00000                     NaN
+25%           NaN          NaN            NaN      NaN          NaN         NaN            18.240000         2.000000                NaN                         NaN   2023.000000       3.000000        NaN         NaN                     NaN                 NaN           8.00000                     NaN
+50%           NaN          NaN            NaN      NaN          NaN         NaN            36.060000         3.000000                NaN                         NaN   2024.000000       5.000000        NaN         NaN                     NaN                 NaN           8.00000                     NaN
+75%           NaN          NaN            NaN      NaN          NaN         NaN            54.120000         4.000000                NaN                         NaN   2024.000000       9.000000        NaN         NaN                     NaN                 NaN          48.00000                     NaN
+max           NaN          NaN            NaN      NaN          NaN         NaN            72.000000         5.000000                NaN                         NaN   2025.000000      12.000000        NaN         NaN                     NaN                 NaN          48.00000                     NaN
+
+5. TICKETS BY STATUS
+Status
+In Progress    12580
+Open           12508
+Closed         12482
+Resolved       12430
+
+6. TICKETS BY PRIORITY
+Priority
+High        12702
+Low         12501
+Critical    12410
+Medium      12387
+
+7. TICKETS BY DEPARTMENT
+Department
+User Accounts           6389
+Hardware Support        6319
+Billing & Licensing     6317
+Security Operations     6311
+Cloud Services          6255
+Technical Support       6186
+Network Operations      6164
+Software Development    6059
+
+8. MONTHLY TICKET TREND
+Month
+2023-01    1724
+2023-02    1565
+2023-03    1832
+2023-04    1603
+2023-05    1659
+2023-06    1675
+2023-07    1737
+2023-08    1717
+2023-09    1672
+2023-10    1734
+2023-11    1674
+2023-12    1706
+2024-01    1654
+2024-02    1572
+2024-03    1761
+2024-04    1602
+2024-05    1731
+2024-06    1658
+2024-07    1771
+2024-08    1694
+2024-09    1672
+2024-10    1722
+2024-11    1699
+2024-12    1710
+2025-01    1742
+2025-02    1587
+2025-03    1704
+2025-04    1698
+2025-05    1680
+2025-06    1045
+Freq: M
+
+9. RESOLUTION TIME ANALYSIS
+Average resolution time: 36.16 hours
+Median resolution time: 36.06 hours
+Minimum resolution time: 0.5 hours
+Maximum resolution time: 72.0 hours
+
+10. CUSTOMER RATING ANALYSIS
+Average customer rating: 3.01 / 5
+
+Rating counts:
+Customer_Rating
+1.0     570
+1.1    1215
+1.2    1296
+1.3    1239
+1.4    1233
+1.5    1245
+1.6    1290
+1.7    1233
+1.8    1264
+1.9    1289
+2.0    1172
+2.1    1273
+2.2    1225
+2.3    1238
+2.4    1222
+2.5    1220
+2.6    1251
+2.7    1254
+2.8    1219
+2.9    1288
+3.0    1280
+3.1    1245
+3.2    1275
+3.3    1296
+3.4    1339
+3.5    1151
+3.6    1231
+3.7    1261
+3.8    1318
+3.9    1272
+4.0    1259
+4.1    1189
+4.2    1229
+4.3    1238
+4.4    1222
+4.5    1269
+4.6    1214
+4.7    1241
+4.8    1259
+4.9    1300
+5.0     676
+
+11. AVERAGE RESOLUTION TIME BY PRIORITY
+Priority
+Medium      36.25
+Low         36.15
+Critical    36.14
+High        36.11
+
+12. TOP 10 ASSIGNED AGENTS
+Assigned_To
+Agent_12    1355
+Agent_34    1328
+Agent_13    1308
+Agent_06    1304
+Agent_38    1296
+Agent_33    1289
+Agent_36    1282
+Agent_39    1280
+Agent_18    1279
+Agent_03    1275
+
+13. TICKETS BY ISSUE CATEGORY
+Issue_Category
+Network & Connectivity     31373
+Account & Access           10722
+Software & Applications     7442
+Hardware & Devices           463
+
+14. SLA STATUS ANALYSIS
+SLA_Status
+Breached (assumed SLA)    35595
+Met (assumed SLA)         14405
+
+==================================================
+EDA COMPLETED SUCCESSFULLY
+==================================================
